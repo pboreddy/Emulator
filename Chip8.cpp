@@ -4,9 +4,9 @@
 
 Chip8::Chip8(std::string filename) {
 //    loadROM(filename);
-    loadROM("../test_opcode.ch8");
-//    loadROM("../1-chip8-logo.ch8");
-//    loadROM("../IBMLogo.ch8");
+    loadROM("../testROMs/test_opcode.ch8");
+//    loadROM("../testROMs/1-chip8-logo.ch8");
+//    loadROM("../testROMs/IBMLogo.ch8");
     loadFonts();
 };
 
