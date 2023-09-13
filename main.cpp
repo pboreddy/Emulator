@@ -45,9 +45,149 @@ int main() {
         // poll for events from SDL
         while(SDL_PollEvent(&event))
         {
-            // determine if the user still wants to have the window open
-            // (this basically checks if the user has pressed 'X')
-            running = event.type != SDL_QUIT;
+            switch(event.type) {
+                case SDL_KEYUP:
+                    std::cout << "key up " << SDL_GetKeyName(event.key.keysym.sym) << "\n";
+                    switch (event.key.keysym.sym) {
+                        case SDLK_1:
+                            chip.input_keys[0] = 0;
+//                            std::cout << "1 pressed" << "\n";
+                            break;
+                        case SDLK_2:
+                            chip.input_keys[1] = 0;
+//                            std::cout << "2 pressed" << "\n";
+                            break;
+                        case SDLK_3:
+                            chip.input_keys[2] = 0;
+//                            std::cout << "3 pressed" << "\n";
+                            break;
+                        case SDLK_4:
+                            chip.input_keys[3] = 0;
+//                            std::cout << "4 pressed" << "\n";
+                            break;
+                        case SDLK_q:
+                            chip.input_keys[4] = 0;
+//                            std::cout << "q pressed" << "\n";
+                            break;
+                        case SDLK_w:
+                            chip.input_keys[5] = 0;
+//                            std::cout << "w pressed" << "\n";
+                            break;
+                        case SDLK_e:
+                            chip.input_keys[6] = 0;
+//                            std::cout << "e pressed" << "\n";
+                            break;
+                        case SDLK_r:
+                            chip.input_keys[7] = 0;
+//                            std::cout << "r pressed" << "\n";
+                            break;
+                        case SDLK_a:
+                            chip.input_keys[8] = 0;
+//                            std::cout << "a pressed" << "\n";
+                            break;
+                        case SDLK_s:
+                            chip.input_keys[9] = 0;
+//                            std::cout << "s pressed" << "\n";
+                            break;
+                        case SDLK_d:
+                            chip.input_keys[10] = 0;
+//                            std::cout << "d pressed" << "\n";
+                            break;
+                        case SDLK_f:
+                            chip.input_keys[11] = 0;
+//                            std::cout << "f pressed" << "\n";
+                            break;
+                        case SDLK_z:
+                            chip.input_keys[12] = 0;
+//                            std::cout << "z pressed" << "\n";
+                            break;
+                        case SDLK_x:
+                            chip.input_keys[13] = 0;
+//                            std::cout << "x pressed" << "\n";
+                            break;
+                        case SDLK_c:
+                            chip.input_keys[14] = 0;
+//                            std::cout << "c pressed" << "\n";
+                            break;
+                        case SDLK_v:
+                            chip.input_keys[15] = 0;
+//                            std::cout << "v pressed" << "\n";
+                            break;
+                    }
+                    break;
+                case SDL_KEYDOWN:
+                    std::cout << "key down " << SDL_GetKeyName(event.key.keysym.sym) << "\n";
+                    switch (event.key.keysym.sym) {
+                        case SDLK_1:
+                            chip.input_keys[0] = 1;
+//                            std::cout << "1 pressed" << "\n";
+                            break;
+                        case SDLK_2:
+                            chip.input_keys[1] = 1;
+//                            std::cout << "2 pressed" << "\n";
+                            break;
+                        case SDLK_3:
+                            chip.input_keys[2] = 1;
+//                            std::cout << "3 pressed" << "\n";
+                            break;
+                        case SDLK_4:
+                            chip.input_keys[3] = 1;
+//                            std::cout << "4 pressed" << "\n";
+                            break;
+                        case SDLK_q:
+                            chip.input_keys[4] = 1;
+//                            std::cout << "q pressed" << "\n";
+                            break;
+                        case SDLK_w:
+                            chip.input_keys[5] = 1;
+//                            std::cout << "w pressed" << "\n";
+                            break;
+                        case SDLK_e:
+                            chip.input_keys[6] = 1;
+//                            std::cout << "e pressed" << "\n";
+                            break;
+                        case SDLK_r:
+                            chip.input_keys[7] = 1;
+//                            std::cout << "r pressed" << "\n";
+                            break;
+                        case SDLK_a:
+                            chip.input_keys[8] = 1;
+//                            std::cout << "a pressed" << "\n";
+                            break;
+                        case SDLK_s:
+                            chip.input_keys[9] = 1;
+//                            std::cout << "s pressed" << "\n";
+                            break;
+                        case SDLK_d:
+                            chip.input_keys[10] = 1;
+//                            std::cout << "d pressed" << "\n";
+                            break;
+                        case SDLK_f:
+                            chip.input_keys[11] = 1;
+//                            std::cout << "f pressed" << "\n";
+                            break;
+                        case SDLK_z:
+                            chip.input_keys[12] = 1;
+//                            std::cout << "z pressed" << "\n";
+                            break;
+                        case SDLK_x:
+                            chip.input_keys[13] = 1;
+//                            std::cout << "x pressed" << "\n";
+                            break;
+                        case SDLK_c:
+                            chip.input_keys[14] = 1;
+//                            std::cout << "c pressed" << "\n";
+                            break;
+                        case SDLK_v:
+                            chip.input_keys[15] = 1;
+//                            std::cout << "v pressed" << "\n";
+                            break;
+                    }
+                    break;
+                case SDL_QUIT:
+                    running = false;
+                    break;
+            }
         }
 
     }

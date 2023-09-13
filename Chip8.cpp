@@ -4,7 +4,8 @@
 
 Chip8::Chip8(std::string filename) {
 //    loadROM(filename);
-    loadROM("../testROMs/test_opcode.ch8");
+    loadROM("../testROMs/pong.rom");
+//    loadROM("../testROMs/test_opcode.ch8");
 //    loadROM("../testROMs/1-chip8-logo.ch8");
 //    loadROM("../testROMs/IBMLogo.ch8");
     loadFonts();
@@ -515,6 +516,6 @@ void Chip8::run() {
     if (delay_t > 0) {
         delay_t--;
     }
-    std::this_thread::sleep_for(std::chrono::nanoseconds(25000000));
+    std::this_thread::sleep_for(std::chrono::nanoseconds(1000000));
 }
 
