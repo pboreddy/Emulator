@@ -325,7 +325,7 @@ void Chip8::op_Fx33() {
 void Chip8::op_Fx55() {
     // Store registers V0 through Vx in memory starting at location I.
     uint8_t Vx = (op & 0x0F00) >> 8;
-    for (int i = 0; i < Vx; i++) {
+    for (int i = 0; i <= Vx; i++) {
         memory.wbyte(index_reg+i,registers[i]);
     }
 }
@@ -333,7 +333,7 @@ void Chip8::op_Fx55() {
 void Chip8::op_Fx65() {
     // Read registers V0 through Vx from memory starting at location I.
     uint8_t Vx = (op & 0x0F00) >> 8;
-    for (int i = 0; i < Vx; i++) {
+    for (int i = 0; i <= Vx; i++) {
         registers[i] = memory.rbyte(index_reg+i);
     }
 }
